@@ -1,0 +1,7 @@
+beautifulsoup4==4.12.3
+edge_tts==6.1.10
+moviepy==1.0.3
+openai==1.14.3
+Requests==2.31.0
+tqdm==4.66.1
+parsel
