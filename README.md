@@ -72,8 +72,20 @@ pip install soundfile nemo_text_processing gradio WeTextProcessing
 
 ## 使用说明
 
-1.启动stable-diffusion-web-ui，修改 `utils/sd.py` 中的url地址（启动的时候需要加上 `--api --listen` 参数）。
+1.启动stable-diffusion-web-ui（启动的时候需要加上 `--api --listen` 参数），然后修改 `utils/sd.py` 中的url地址。
 
-2.运行test目录下的 `Chattts_test.py`和 `stable_diffusion_test.py`，确保环境配置正确。
+2.运行test目录下的 `Chattts_test.py`和 `stable_diffusion_test.py`,以检查环境是否配置正确。
 
-3.运行`utils/novel_spider.py` 爬取指定的小说内容，爬取到的内容将会存放在`素材/小说原文`的文件夹下 
+3.运行`utils/novel_spider.py` 爬取指定的小说内容，爬取到的内容将会存放在`素材/小说原文`的文件夹下,`utils/novel_spider.py` 的具体使用教程请查看这里：[使用教程](https://github.com/LUORANCHENG/novel2video/wiki/novel_spider.py%E7%9A%84%E5%85%B7%E4%BD%93%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
+
+4.修改根目录中main.py最底下的generate_videos函数，填上自己的小说所在文件夹目录和小说名称。
+
+5.运行根目录下的main.py文件，所有的输出均保存在`output`目录中
+
+6.英文字幕会生成在 `subtitle` 文件夹里（中文字幕直接就是原始文本），可以使用剪映等软件识别并创建字幕
+
+## 进阶用法
+
+1.可通过修改`utils/tts_pro.py`来实现固定音色、设置语速、添加停顿词、口头语、笑声等功能，具体参数设置可参考Chattts的官方仓库：[Chattts官方仓库](https://github.com/2noise/ChatTTS)
+
+2.可通过修改`utils/sd.py`中的`sd_model_checkpoint`参数来更换不同的stable_diffusion文生图模型，模型的下载可自行上浏览器查找。
