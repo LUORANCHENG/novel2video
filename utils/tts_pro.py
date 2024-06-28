@@ -4,6 +4,7 @@ from ChatTTS import ChatTTS
 import soundfile
 from IPython.display import Audio
 import asyncio
+import os
 
 
 chat = ChatTTS.Chat()
@@ -15,7 +16,7 @@ chat.load_models(compile=False) # 设置为Flase获得更快速度，设置为Tr
 # speaker = chat.sample_random_speaker()
 
 # 载入保存好的音色
-speaker = torch.load('./素材/speaker/speaker_5_girl.pth', map_location=torch.device('cpu'))
+speaker = torch.load('./素材/speaker/speaker_5_girl.pth')
 
 
 def generate_audio(text, language:str, txt_name:str, order:int, oral=3, laugh=3, bk=3):
@@ -43,7 +44,10 @@ def generate_audio(text, language:str, txt_name:str, order:int, oral=3, laugh=3,
             print(refine_text)
             wavs = chat.infer(refine_text, params_refine_text=params_refine_text, params_infer_code=params_infer_code)
 
-            torchaudio.save(f'./output/audios/{txt_name}/{language}/{order}.mp3', torch.from_numpy(wavs[0]), 24000)
+            save_path = f"./output/audios/{txt_name}/{language}"
+            if not os.path.exists(save_path):
+                os.makedirs(save_path)
+            torchaudio.save(f'{save_path }/{order}.mp3', torch.from_numpy(wavs[0]), 24000)
             break
         except Exception as e:
             attempt += 1

@@ -384,8 +384,8 @@ def remove_unwanted_text(text):
 
 # 发送请求：模拟浏览器对于url地址发送请求
 headers = {
-    'Cookie':'s_v_web_id=verify_lxv92wzy_ApG24Fd0_gjyL_466A_ARnL_1736W4xZoOK2; csrf_session_id=7a500758378d73e2c4df00888c1d4244; novel_web_id=7101332169921454477; serial_uuid=7101332169921454477; serial_webid=7101332169921454477; passport_csrf_token=5ef9f11db52d7d9b0d6f482d56a5a0a3; passport_csrf_token_default=5ef9f11db52d7d9b0d6f482d56a5a0a3; d_ticket=78528e13fc813b222aab71a3e22d70f93a535; odin_tt=e20947166b4d961385f6a9d3c0aab251cc5f4fd2d175f06f4027360f99edbe36b15cbbfff394c1d187b11573f4995194f698c4204d89f8571b46c7bd1dc9b9ac; n_mh=K-QT9aYc6S7R1RrONXgs75OxUE2VqileLmLOSH2sdK8; passport_auth_status=2ba4a6b445477953f55e90037b134952%2C; passport_auth_status_ss=2ba4a6b445477953f55e90037b134952%2C; sid_guard=f59404f9a28b9f777a812dc299792541%7C1719371007%7C5184000%7CSun%2C+25-Aug-2024+03%3A03%3A27+GMT; uid_tt=aa0fbbaaa39766d6315854b743b9104c; uid_tt_ss=aa0fbbaaa39766d6315854b743b9104c; sid_tt=f59404f9a28b9f777a812dc299792541; sessionid=f59404f9a28b9f777a812dc299792541; sessionid_ss=f59404f9a28b9f777a812dc299792541; sid_ucp_v1=1.0.0-KGY1MDc2MTM3ZTJiMTJkZDZiNjMzOTBkOTZjOTE1ZmVhMjAyYzg3NGIKHwjjnYDC-8ytBhD_ie6zBhjHEyAMMP-J7rMGOAJA7AcaAmhsIiBmNTk0MDRmOWEyOGI5Zjc3N2E4MTJkYzI5OTc5MjU0MQ; ssid_ucp_v1=1.0.0-KGY1MDc2MTM3ZTJiMTJkZDZiNjMzOTBkOTZjOTE1ZmVhMjAyYzg3NGIKHwjjnYDC-8ytBhD_ie6zBhjHEyAMMP-J7rMGOAJA7AcaAmhsIiBmNTk0MDRmOWEyOGI5Zjc3N2E4MTJkYzI5OTc5MjU0MQ; store-region=cn-gd; store-region-src=uid; Hm_lvt_2667d29c8e792e6fa9182c20a3013175=1719394820; Hm_lpvt_2667d29c8e792e6fa9182c20a3013175=1719395683; ttwid=1%7CviOF-tP8KM0M---fsVfuLmfV16uPiJ9I9wXSnvLarLY%7C1719395683%7C613d645eba582507b395707e1076ada9ec69b3673ab55d856955ab0c8a95c688; msToken=hMxzhL6IvoFL44-m6O_2YZWzjazrdG6YCVrW_HLhmLH8RVI5HMR8EXW904XecjdRTOV_bnUfPBb2ndgirgEePuR80qDhOEq7TlFFRlUy4W7JIc7yJDH2',
-    'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 Edg/126.0.0.0'
+    'Cookie':'paste your cookie here',
+    'User-Agent':'paste your user-agent here'
 }
 
 book_id = input("请输入要爬取书目的ID：")
@@ -453,35 +453,3 @@ for title, link in zip(title_name_list, title_ID_list):
             f.write(text)
             f.write('\n')
     flag+=1
-
-
-
-
-
-
-
-
-
-
-
-#     # 发送请求，获取数据内容
-#     link_data = requests.get(url=link_url, headers=headers).text
-#     # 解析数据，提取小说内容
-#     link_setector = parsel.Selector(link_data)
-#     content_list = link_setector.css('.muye-reader-content-16 p::text').getall()
-#     # 把列表合并成字符串
-#     content = '\n\n'.join(content_list)
-#     novel_content = ""
-#     # 解密字体
-#     for index in content:
-#         try:
-#             word = dit_data[str(ord(index))]
-#
-#         except:
-#             word = index
-#         novel_content += word
-#     with open(name+'.txt', mode='a', encoding='utf-8') as f:
-#         f.write(title)
-#         f.write('\n\n')
-#         f.write(novel_content)
-#         f.write('\n\n')

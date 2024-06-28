@@ -34,8 +34,8 @@ def text_to_prompt(text, max_retries=50):
         try:
             client = OpenAI(
                 # 改写这里为你自己的 key
-                api_key="sk-uRJagAEuxp5mtuVUF721C196Da044f16950fEfE36c8e0f2b",
-                base_url="https://api.gpts.vin/v1",
+                api_key="sk-xxxxxx",
+                base_url="",
             )
             completion = client.chat.completions.create(
                 model="gpt-3.5-turbo",
