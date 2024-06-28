@@ -379,7 +379,8 @@ def remove_unwanted_text(text):
     text = text.replace("'", "").replace('"', "").replace("”", "").replace('“', '')
     text = text.replace("?", ",").replace("？", ",")
     text = text.replace("……", ",")
-    text = text+'。'
+    if text != '':
+        text = text+'。'
     return text
 
 # 发送请求：模拟浏览器对于url地址发送请求
