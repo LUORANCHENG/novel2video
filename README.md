@@ -82,7 +82,7 @@ pip install soundfile nemo_text_processing gradio WeTextProcessing
 
 4.运行`utils/novel_spider.py` 爬取指定的小说内容，爬取到的内容将会存放在`素材/小说原文`的文件夹下,`utils/novel_spider.py` 的具体使用教程请查看这里：[使用教程](https://github.com/LUORANCHENG/novel2video/wiki/novel_spider.py%E7%9A%84%E5%85%B7%E4%BD%93%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
 
-5.修改根目录中main.py最底下的generate_videos函数，填上自己的小说所在文件夹目录和小说名称。
+5.修改根目录中main.py最底下的generate_videos函数，填上自己的小说所在文件夹目录和小说名称，并修改要生成视频的起始章节数和终止章节数。
 
 6.运行根目录下的main.py文件，所有的输出均保存在`output`目录中
 
