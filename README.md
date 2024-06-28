@@ -29,6 +29,8 @@ https://github.com/LUORANCHENG/novel2video/assets/80999506/6ff66fd0-9251-47ce-ae
 
 2.安装stable-diffusion-web-ui，具体安装教程请参考官方的仓库: [stable-diffusion-web-ui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 
+3.获取到一个GPT3.5的api_key
+
 
 ### 配置环境
 
@@ -72,17 +74,19 @@ pip install soundfile nemo_text_processing gradio WeTextProcessing
 
 ## 使用说明
 
-1.启动stable-diffusion-web-ui（启动的时候需要加上 `--api --listen` 参数），然后修改 `utils/sd.py` 中的url地址。
+1.在`utils/llm.py`中填入自己GPT3.5的api_key。
 
-2.运行test目录下的 `Chattts_test.py`和 `stable_diffusion_test.py`,以检查环境是否配置正确。
+2.启动stable-diffusion-web-ui（启动的时候需要加上 `--api --listen` 参数），然后修改 `utils/sd.py` 中的url地址。
 
-3.运行`utils/novel_spider.py` 爬取指定的小说内容，爬取到的内容将会存放在`素材/小说原文`的文件夹下,`utils/novel_spider.py` 的具体使用教程请查看这里：[使用教程](https://github.com/LUORANCHENG/novel2video/wiki/novel_spider.py%E7%9A%84%E5%85%B7%E4%BD%93%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
+3.运行test目录下的 `Chattts_test.py`和 `stable_diffusion_test.py`,以检查环境是否配置正确。
 
-4.修改根目录中main.py最底下的generate_videos函数，填上自己的小说所在文件夹目录和小说名称。
+4.运行`utils/novel_spider.py` 爬取指定的小说内容，爬取到的内容将会存放在`素材/小说原文`的文件夹下,`utils/novel_spider.py` 的具体使用教程请查看这里：[使用教程](https://github.com/LUORANCHENG/novel2video/wiki/novel_spider.py%E7%9A%84%E5%85%B7%E4%BD%93%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
 
-5.运行根目录下的main.py文件，所有的输出均保存在`output`目录中
+5.修改根目录中main.py最底下的generate_videos函数，填上自己的小说所在文件夹目录和小说名称。
 
-6.英文字幕会生成在 `subtitle` 文件夹里（中文字幕直接就是原始文本），可以使用剪映等软件识别并创建字幕
+6.运行根目录下的main.py文件，所有的输出均保存在`output`目录中
+
+7.英文字幕会生成在 `subtitle` 文件夹里（中文字幕直接就是原始文本），可以使用剪映等软件识别并创建字幕
 
 ## 进阶用法
 
