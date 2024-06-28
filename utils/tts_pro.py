@@ -41,7 +41,6 @@ def generate_audio(text, language:str, txt_name:str, order:int, oral=3, laugh=3,
             }
 
             refine_text = chat.infer(text, refine_text_only=True)
-            print(refine_text)
             wavs = chat.infer(refine_text, params_refine_text=params_refine_text, params_infer_code=params_infer_code)
 
             save_path = f"./output/audios/{txt_name}/{language}"
